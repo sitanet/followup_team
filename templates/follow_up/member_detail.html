@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+                    
+                       
+
+                
+                       
+                        {% include 'includes/alerts.html' %}
+                        
+                            {{ form.errors }}
+                        
+                        <!-- dashboard inner -->
+               <div class="midde_cont">
+                <div class="container-fluid">
+                   <div class="row column_title">
+                      <div class="col-md-12">
+                         <div class="page_title">
+                            <h2>Dashboard</h2>
+                         </div>
+                      </div>
+                   </div>
+                <div class="container">
+      <header>Registration</header>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+   
+ 
+          <div class="form first">
+              <div class="details personal">
+                  <span class="title">Member Details</span>
+                 
+
+                  <div class="image-preview-container">
+                    <div class="preview">
+                        <img id="preview-selected-image" />
+                    </div>
+                    <label for="file-upload">Choose Photo</label>
+                    <input type="file" id="file-upload" name="image" accept="image/*" onchange="previewImage(event);" />
+                </div>
+
+                  <div class="fields" >
+                    <img src="{{member.image.url}}" alt="" width="100" height="130" style="margin-left: auto; margin-right: auto;">
+                </div>
+
+                  <div class="fields">
+                      <div class="input-field">
+                          <label>First Name*</label>
+                          
+                          <input type="text" placeholder="Enter First Name" name="first_name" value="{{member.first_name}}" required>
+                          <!-- {{form.first_name}} -->
+                      </div>
+                       <div class="input-field">
+                          <label>Middle Name</label>
+                          <input type="text" placeholder="Enter Middle Name" name="middle_name" value="{{member.middle_name}}">
+                          <!-- {{form.middle_name}} -->
+                      </div>
+                       <div class="input-field">
+                          <label>Last Name*</label>
+                          <input type="text" placeholder="Enter Last Name" name="last_name" value="{{member.last_name}}" required>
+                          <!-- {{form.last_name}} -->
+                      </div>
+
+                       <div class="input-field">
+                          <label>Address*</label>
+                          <input type="textarea" placeholder="Enter Address" name="address" value="{{member.address}}" required>
+                          <!-- {{form.address}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Nationality*</label>
+                          <input type="text" placeholder="Enter Nationality" name="nationality" value="{{member.nationality}}" required>
+                          <!-- {{form.nationality}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Date of Birth*</label>
+                          <input type="date" placeholder="Enter birth date" name="date_of_birth" value="{{member.date_of_birth}}" required>
+                          <!-- {{form.date_of_birth}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Email*</label>
+                          <input type="Email" placeholder="Enter your Email" name="email" value="{{member.email}}" required>
+                          <!-- {{form.email}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Mobile Number*</label>
+                          <input type="number" placeholder="Enter mobile number" name="phone_no" value="{{member.phone_no}}" required>
+                          <!-- {{form.phone_no}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Gender*</label>
+                             <select required name="gender" >
+                              <option disabled selected>Select Gender</option>
+                             
+                              <option value="1" >Male</option>
+                              <option value="2">Female</option>
+                          </select> 
+                          <!-- <input type="number" placeholder="Enter mobile number" name="gender" value=" {{member.gender}}" required> -->
+                        
+                      </div>
+                       <div class="input-field">
+                          <label>Marital Status*</label>
+                          <select required name="marital_status" >
+                            <option disabled selected>Select Marrital Status</option>
+                           
+                            <option >Single</option>
+                            <option >Married</option>
+                        </select> 
+                         <!-- {{form.marital_status}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Occupation*</label>
+                          <input type="text" placeholder="Enter your occupation" name="occupation" value="{{member.occupation}}" required>
+                          <!-- {{form.occupation}} -->
+                      </div>
+                  </div>
+              </div>
+
+              <div class="details ID">
+               
+
+                  <div class="fields">
+                     
+
+                      <div class="input-field">
+                          <label>Wedding Anniversary</label>
+                          <input type="date" placeholder="Enter Wedding Anniversary date" name="wedding_ann"  value="{{member.wedding_ann}}">
+                          <!-- {{form.wedding_ann}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>When did you Join TCGC</label>
+                          <input type="date" placeholder="Enter date Join" name="join" value="{{member.join}}">
+                          <!-- {{form.join}} -->
+                      </div>
+
+                        <div class="input-field">
+                          <label>Registration Date*</label>
+                          <input type="date" name="reg_date" value="{{member.reg_date}}" required>
+                          <!-- {{form.reg_date}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>How did you know about TCGC</label>
+                          <input type="text" placeholder="Enter How did you know about TCGC" name="about" value="{{member.about}}">
+                          <!-- {{form.about}} -->
+                      </div>
+
+                      <div class="input-field">
+                          <label>Department/Unit</label>
+                          <input type="text" placeholder="Department" name="dept" value="{{member.dept}}">
+                          <!-- {{form.dept}} -->
+                      </div>
+
+                       <div class="input-field">
+                          <label>KCC Center</label>
+                          <!-- <select required name="kcc_center">
+                              <option disabled selected>Select Marital Status</option>
+                              <option>Ojo Center</option>
+                              <option>Ajibode Center</option>
+                              <option>Bodija 1 Center</option>
+                              <option>Bodija 2 Center</option>
+                              <option>Apete Center</option>
+                              <option>Sango Center</option>
+                              <option>Akobo Center</option>
+                              <option>Ring Road Center</option>
+                              <option>Agbowo 1</option>
+                              <option>Agbowo 2</option>
+                              <option>Orogun Center</option>
+                          </select> -->
+                          <input type="text" placeholder="Department" name="dept" value="{{member.kcc_center}}">
+                          <!-- {{form.kcc_center}} -->
+
+                      </div>
+
+                       <div class="input-field">
+                          <label>Purpose of Visit</label>
+                          <!-- <select required name="purpose">
+                              <option disabled selected>Select Marital Status</option>
+                              <option>School</option>
+                              <option>Work</option>
+                              <option>Special Event</option>
+                              <option>Relocate to Ibadan</option>
+                              <option>Conference/Training</option>
+                              
+                          </select> -->
+                          <input type="text" placeholder="Department" name="dept" value="{{member.purpose}}">
+                          <!-- {{form.purpose}} -->
+
+                      </div>
+
+                      <div class="input-field">
+                        <button class="sumbit">
+                            <span class="btnText">Update</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+
+                      <!-- <div class="input-field">
+                        <label>Purpose of Visit</label>
+                        <img src="{{ form.images.url }}" alt="name">
+
+                    </div> -->
+                  </div>
+
+
+                     
+                  </div>
+
+                     
+              </div> 
+          </div>
+
+          <div class="form second">
+              <div class="details address">
+                 
+
+        
+              </div>
+
+              <div class="details family">
+                 
+
+
+ 
+                    
+
+      <div class="fields">
+
+       <!--    <div class="input-field">
+                   <label>Photo</label>
+              <input type="file" multiple="false" accept="images/*" id=finput onchange="upload()">
+          </div> -->
+                   
+                      
+
+
+
+             <!--      <div class="buttons">
+                      <div class="backBtn">
+                          <i class="uil uil-navigator"></i>
+                          <span class="btnText">Back</span>
+                      </div>
+                      
+                      <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+                  </div> -->
+              </div> 
+          </div>
+      </form>
+  </div>
+
+  <script src="multi_form.js"></script>
+                  
+                   
+                <!-- footer -->
+                <div class="container-fluid">
+                   <div class="footer">
+                      <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                         Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                      </p>
+                   </div>
+                </div>
+             </div>
+             <!-- end dashboard inner -->
+                    
+     
+
+
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+                    
+                       
+
+                
+                       
+                        {% include 'includes/alerts.html' %}
+                        
+                            {{ form.errors }}
+                        
+                        <!-- dashboard inner -->
+               <div class="midde_cont">
+                <div class="container-fluid">
+                   <div class="row column_title">
+                      <div class="col-md-12">
+                         <div class="page_title">
+                            <h2>Dashboard</h2>
+                         </div>
+                      </div>
+                   </div>
+                <div class="container">
+      <header>Team Member Register</header>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+ 
+          <div class="form first">
+              <div class="details personal">
+                  <!-- <span class="title">Member Details</span> -->
+
+
+      <!-- <div class="image-preview-container">
+          <div class="preview">
+              <img id="preview-selected-image" />
+          </div>
+          <label for="file-upload">Choose Photo</label>
+          <input type="file" id="file-upload" name="image" accept="image/*" onchange="previewImage(event);" />
+      </div> -->
+
+                  <div class="fields">
+                      <div class="input-field">
+                          <label>First Name*</label>
+                          <input type="text" placeholder="Enter First Name" name="first_name" required>
+                      </div>
+                    
+                       <div class="input-field">
+                          <label>Last Name*</label>
+                          <input type="text" placeholder="Enter Last Name" name="last_name" required>
+                      </div>
+
+                       <div class="input-field">
+                          <label>Username*</label>
+                          {{form.username}}
+                      </div>
+
+                      <div class="input-field">
+                          <label>fullname*</label>
+                          {{s_form.staff_full_name}}
+                      </div>
+
+                      <!-- <div class="input-field">
+                        <label>staff id*</label>
+                        {{s_form.staff_id_card}}
+                    </div> -->
+
+                      <div class="input-field">
+                          <label>Email*</label>
+                          {{form.email}}
+                      </div>
+
+                      <div class="input-field">
+                          <label>Passwrd*</label>
+                          {{form.password}}
+                      </div>
+
+                      <div class="input-field">
+                          <label>confirm_password*</label>
+                          {{form.confirm_password}}
+                      </div>
+
+                      
+                  </div>
+              </div>
+
+              <div class="details ID">
+               
+
+                  <div class="fields">
+                     
+
+                    
+
+                     
+                  </div>
+
+
+                     
+                  </div>
+
+              <button class="sumbit">
+                          <span class="btnText">Register</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+              </div> 
+          </div>
+
+          <div class="form second">
+              <div class="details address">
+                 
+
+        
+              </div>
+
+              <div class="details family">
+                 
+
+
+ 
+                    
+
+      <div class="fields">
+
+       <!--    <div class="input-field">
+                   <label>Photo</label>
+              <input type="file" multiple="false" accept="images/*" id=finput onchange="upload()">
+          </div> -->
+                   
+                      
+
+
+
+             <!--      <div class="buttons">
+                      <div class="backBtn">
+                          <i class="uil uil-navigator"></i>
+                          <span class="btnText">Back</span>
+                      </div>
+                      
+                      <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+                  </div> -->
+              </div> 
+          </div>
+      </form>
+  </div>
+
+  <script src="multi_form.js"></script>
+                  
+                   
+                <!-- footer -->
+                <div class="container-fluid">
+                   <div class="footer">
+                      <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                         Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                      </p>
+                   </div>
+                </div>
+             </div>
+             <!-- end dashboard inner -->
+                    
+     
+
+
+{% endblock %}

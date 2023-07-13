@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+                    
+                       
+
+                
+                       
+                        {% include 'includes/alerts.html' %}
+                        
+                            {{ form.errors }}
+                        
+                        <!-- dashboard inner -->
+               <div class="midde_cont">
+                <div class="container-fluid">
+                   <div class="row column_title">
+                      <div class="col-md-12">
+                         <div class="page_title">
+                            <h2>Dashboard</h2>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+           
+
+                   <div class="col-md-12">
+                    <div class="white_shd full margin_bottom_30">
+                       <div class="full graph_head">
+                          <div class="heading1 margin_0">
+                             <h2>All Member</h2>
+                          </div><br>
+                          <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
+                       </div>
+                     
+                       <div class="table_section padding_infor_info">
+                          <div class="table-responsive-sm">
+                             <table class="table table-hover">
+                                <thead>
+                                   <tr>
+                                      <th>Id No</th>
+                                      <th>First Name</th>
+                                      <!-- <th>Middle Name</th> -->
+                                      <th>Date</th>
+                                      <th style="width:30%">Comment</th>
+                                      <th>Team Supervisor</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comment %}
+                                    
+                                   <tr >
+                                      <td>{{ comment.id }}</td>
+                                      <td >{{ comment.first_name }}</td>
+                                     
+                                      <td>{{ comment.date_created }}</td>
+                                      <td widt>{{ comment.comment }}</td>
+                                      <td>{{ comment.team_sup }}</td>
+
+                                   </tr>
+                                   {% endfor %}
+                                
+                               
+                                </tbody>
+                             </table>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              
+
+                  
+                   
+                <!-- footer -->
+            
+             </div>
+             <!-- end dashboard inner -->
+                    
+     
+
+
+{% endblock %}

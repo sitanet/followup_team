@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+
+
+
+
+           <!-- start content -->
+                  
+                     <!-- graph -->
+                    
+                       
+
+                     <div class="container">
+                        <header class="text-uppercase">My Profile</header>
+                        {% include 'includes/alerts.html' %}
+                
+                        <form action="{% url 'staff_profile' %}"  method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form first">
+                                <div class="details personal">
+                
+                                    <div class="fields">
+                                      
+
+                                    
+                                        <div class="input-field">
+                                            <!-- <label>Debit GL.No</label> -->
+                                           
+                                       
+                                        </div>
+
+                                       
+
+                                        <div class="input-field">
+                                            <label>User Picture</label>
+                                            <img width="120" class="rounded border border-success" src="{{ profile.profile_picture.url}}" alt="picture" />
+                                           
+                                                {{profile_form.profile_picture}}
+                                                <label class="text-danger">{{ profile_form.profile_picture.errors}}</label>
+                                     
+                                        </div>
+
+                                        
+                                    
+                                       
+
+
+                                        <div class="input-field">
+                                           <!-- <label>Debit A/C No.</label> -->
+                                           
+                                          
+                                           
+                                         
+                                        </div>
+
+                                      
+
+                                        
+                                        <div class="input-field">
+                                            <label>Full Name</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{user_form.staff_full_name}}
+                                        </div>
+                                        <div class="input-field">
+                                            <label>Last Name</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.address_line1}}
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>User Name</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.country}}
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>Email</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.state}}
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>Address</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.city}}
+                                        </div>
+
+                                     
+
+                                     
+
+                                        <div class="input-field">
+                                            <label>City</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.latitude}}
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>Latitude</label>
+                                            <!-- <input type="text" name="ac_no" id="type_of_account2" readonly required > -->
+                                            {{profile_form.longitude}}
+                                        </div>
+
+                                     
+
+
+
+                                       
+
+                                     
+
+<!-- 
+                                        <div class="input-field">
+                                            <label>Credit GL.NO</label>
+                                            <select id="myList2" onchange="cust_fun()">
+                                                <option disabled selected>Select Type of Account</option>
+                                                {% for cust_trans in cust_trans %}
+                                                <option value="{{cust_trans.custom_id}}">{{cust_trans.custom_id}}-{{cust_trans.first_name}}-{{cust_trans.last_name}}</option>
+                                               {% endfor %}
+                                                
+                                            </select>
+                                            {{ form.type_of_account}}
+                                            {{cust_coa.gl_no}}
+                                       
+                                        </div> -->
+
+                                  
+
+                                      
+                                        
+                                        
+
+                                 
+
+                                     
+                
+                                    </div>
+                                </div>
+                
+                                <div class="details ID">
+                                
+                                    <button class="sumbit float-right" name="reg" ">
+                                        <span class="btnText">Update Profile</span>
+                                        <i class="uil uil-navigator"></i>
+                                    </button>
+                                 
+                                
+                                </div> 
+                            </div>
+                           
+                        </form>
+
+                        
+
+                        
+                    </div>
+
+
+
+                    
+
+
+                    
+                          
+                     
+                    
+            
+
+
+{% endblock %}

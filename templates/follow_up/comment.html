@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+                    
+                       
+
+                
+                       
+                        {% include 'includes/alerts.html' %}
+                        
+                            {{ form.errors }}
+                        
+                        <!-- dashboard inner -->
+               <div class="midde_cont">
+                <div class="container-fluid">
+                   <div class="row column_title">
+                      <div class="col-md-12">
+                         <div class="page_title">
+                            <h2>Dashboard</h2>
+                         </div>
+                      </div>
+                   </div>
+                <div class="container">
+      <header>Comment</header>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+ 
+          <div class="form first">
+              <div class="details personal">
+                  <!-- <span class="title">Member Details</span> -->
+
+
+     
+
+                  <div class="fields">
+                   
+                      <div class="input-field">
+                          <label>First Name*</label>
+                          <input type="text" placeholder="Enter First Name" name="first_name" value="{{member.first_name}}" required readonly>
+                          <!-- {{member.first_name}} -->
+                      </div>
+                       <div class="input-field">
+                          <label>Last Name</label>
+                          <input type="text" placeholder="Enter Middle Name" name="last_name" value="{{member.last_name}}" readonly>
+                          <!-- {{member.last_name}} -->
+                      </div>
+
+                      <div class="input-field">
+                        <!-- <label>Last Name</label> -->
+                        <input type="text"  name="team_sup" value="{{dashboard_user.user}}" readonly hidden>
+                        <!-- {{member.last_name}} -->
+                    </div>
+
+                
+                       <!-- <div class="input-field">
+                          <label>Last Name*</label>
+                          <input type="text" placeholder="Enter Last Name" name="last_name" required readonly>
+                          {{member.team_sup}}
+                      </div> -->
+
+                       <!-- <div class="input-field">
+                          <label>Address*</label>
+                          <input type="textarea" placeholder="Enter Address" name="address" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Nationality*</label>
+                          <input type="text" placeholder="Enter Nationality" name="nationality" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Date of Birth*</label>
+                          <input type="date" placeholder="Enter birth date" name="date_of_birth" required>
+                      </div> -->
+
+                      <div class="input-field">
+                        <label>Comment*</label>
+                        <textarea id="w3review" name="comment" rows="4" cols="70"></textarea>
+                    </div>
+                  
+              </div>
+
+              <div class="details ID">
+               
+
+                  
+                     
+                  </div>
+
+              <button class="sumbit">
+                          <span class="btnText">Save Comment</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+              </div> 
+          </div>
+
+          <div class="form second">
+              <div class="details address">
+                 
+
+        
+              </div>
+
+              <div class="details family">
+                 
+
+
+ 
+                    
+
+      <div class="fields">
+
+       <!--    <div class="input-field">
+                   <label>Photo</label>
+              <input type="file" multiple="false" accept="images/*" id=finput onchange="upload()">
+          </div> -->
+                   
+                      
+
+
+
+             <!--      <div class="buttons">
+                      <div class="backBtn">
+                          <i class="uil uil-navigator"></i>
+                          <span class="btnText">Back</span>
+                      </div>
+                      
+                      <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+                  </div> -->
+              </div> 
+          </div>
+      </form>
+  </div>
+
+  <script src="multi_form.js"></script>
+                  
+                   
+                <!-- footer -->
+                <div class="container-fluid">
+                   <div class="footer">
+                      <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                         Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                      </p>
+                   </div>
+                </div>
+             </div>
+             <!-- end dashboard inner -->
+                    
+     
+
+
+{% endblock %}

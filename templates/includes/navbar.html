@@ -1,0 +1,80 @@
+{% load static %}
+  
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar_blog_1">
+       <div class="sidebar-header">
+         <!--  <div class="logo_section">
+             <a href="index.html"><img class="logo_icon img-responsive" src="images/logo/logo_icon.png" alt="#" /></a>
+          </div> -->
+       </div>
+       <!-- <div class="sidebar_user_info">
+          <div class="icon_setting"></div>
+          <div class="user_profle_side">
+             <div class="user_img"><img class="img-responsive" src="{% static 'images/layout_img/user_img.jpg' %}" alt="#" /></div>
+             <div class="user_info">
+                 <h6 style="color:white;">Bayo Izekor</h6>
+                <p><span class="online_animation"></span> Online</p>
+             </div>
+          </div>
+       </div> -->
+    </div>
+    <div class="sidebar_blog_2">
+       <h4>TCGC Followup Team</h4>
+       <ul class="list-unstyled components">
+   
+          <li><a href=" {% url 'mem_reg' %}"><i class="fa fa-clock-o orange_color"></i> <span>Register Member</span></a></li>
+       
+    <li class="active">
+             <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Reports</span></a>
+             <ul class="collapse list-unstyled" id="additional_page">
+                <li>
+                   <a href="{% url 'display_all' %}">> <span>Display All Member</span></a>
+                </li>
+                <!-- <li>
+                   <a href="display_single.html">> <span>Display Single Member</span></a>
+                </li> -->
+                <li>
+                   <a href="{% url 'display_comment' %}">> <span>Display Comment</span></a>
+                </li>
+         
+             </ul>
+          </li>
+          
+          <li><a href="{% url 'registerStaff' %}"><i class="fa fa-clock-o orange_color"></i> <span>Register Staff</span></a></li>
+          <!-- <li><a href="login.html"><i class="fa fa-clock-o orange_color"></i> <span>Login</span></a></li> -->
+          <li><a href="{% url 'logout' %}"><i class="fa fa-clock-o orange_color"></i> <span>Logout</span></a></li>
+       </ul>
+    </div>
+ </nav>
+ <!-- end sidebar -->
+ <!-- right content -->
+ <div id="content">
+    <!-- topbar -->
+    <div class="topbar">
+       <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="full">
+             <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+           <!--   <div class="logo_section">
+                <a href="index.html"><img class="img-responsive" src="images/logo/logo.png" alt="#" /></a>
+             </div> -->
+             <div class="right_topbar">
+                <div class="icon_info">
+                 
+                   <ul class="user_profile_dd">
+                      <li>
+                         <!-- <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{{ dashboard_user.user_profile.profile_picture.url}}" alt="#" /><span class="name_user">{{dashboard_user.user}}</span></a> -->
+                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'staff_profile' %}">My Profile</a>
+                            <a class="dropdown-item" href="{% url 'forgot_password' %}">Change Password</a>
+                            <!-- <a class="dropdown-item" href="help.html">Help</a> -->
+                            <a class="dropdown-item" href="{% url 'logout' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </nav>
+    </div>
+    <!-- end topbar -->

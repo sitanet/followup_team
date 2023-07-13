@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+            
+                    
+                       
+
+                
+                       
+                        {% include 'includes/alerts.html' %}
+                        
+                            {{ form.errors }}
+                        
+                        <!-- dashboard inner -->
+               <div class="midde_cont">
+                <div class="container-fluid">
+                   <div class="row column_title">
+                      <div class="col-md-12">
+                         <div class="page_title">
+                            <h2>Dashboard</h2>
+                         </div>
+                      </div>
+                   </div>
+                <div class="container">
+      <header>Registration</header>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+ 
+          <div class="form first">
+              <div class="details personal">
+                  <!-- <span class="title">Member Details</span> -->
+
+
+      <div class="image-preview-container">
+          <div class="preview">
+              <img id="preview-selected-image" />
+          </div>
+          <label for="file-upload">Choose Photo</label>
+          <input type="file" id="file-upload" name="image" accept="image/*" onchange="previewImage(event);" />
+      </div>
+
+                  <div class="fields">
+                      <div class="input-field">
+                          <label>First Name*</label>
+                          <input type="text" placeholder="Enter First Name" name="first_name" required>
+                      </div>
+                       <div class="input-field">
+                          <label>Middle Name</label>
+                          <input type="text" placeholder="Enter Middle Name" name="middle_name">
+                      </div>
+                       <div class="input-field">
+                          <label>Last Name*</label>
+                          <input type="text" placeholder="Enter Last Name" name="last_name" >
+                      </div>
+
+                       <div class="input-field">
+                          <label>Address*</label>
+                          <input type="textarea" placeholder="Enter Address" name="address" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Nationality*</label>
+                          <input type="text" placeholder="Enter Nationality" name="nationality" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Date of Birth*</label>
+                          <input type="date" placeholder="Enter birth date" name="date_of_birth" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Email*</label>
+                          <input type="Email" placeholder="Enter your Email" name="email" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Mobile Number*</label>
+                          <input type="number" placeholder="Enter mobile number" name="phone_no" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Gender*</label>
+                         {{form.gender}}
+                      </div>
+                       <div class="input-field">
+                          <label>Marital Status*</label>
+                         {{form.marital_status}}
+                      </div>
+
+                      <div class="input-field">
+                          <label>Occupation*</label>
+                          <input type="text" placeholder="Enter your occupation" name="occupation" >
+                      </div>
+                  </div>
+              </div>
+
+              <div class="details ID">
+               
+
+                  <div class="fields">
+                     
+
+                      <div class="input-field">
+                          <label>Wedding Anniversary</label>
+                          <input type="date" placeholder="Enter Wedding Anniversary date" name="wedding_ann" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>When did you Join TCGC</label>
+                          <input type="date" placeholder="Enter date Join" name="join" >
+                      </div>
+
+                        <div class="input-field">
+                          <label>Registration Date*</label>
+                          <input type="date" name="reg_date" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>How did you know about TCGC</label>
+                          <input type="text" placeholder="Enter How did you know about TCGC" name="about" >
+                      </div>
+
+                      <div class="input-field">
+                          <label>Department/Unit</label>
+                          <input type="text" placeholder="Department" name="dept" >
+                      </div>
+
+                       <div class="input-field">
+                          <label>KCC Center</label>
+                          <select required name="kcc_center">
+                              <option disabled selected>Select Marital Status</option>
+                              <option>Ojo Center</option>
+                              <option>Ajibode Center</option>
+                              <option>Bodija 1 Center</option>
+                              <option>Bodija 2 Center</option>
+                              <option>Apete Center</option>
+                              <option>Sango Center</option>
+                              <option>Akobo Center</option>
+                              <option>Ring Road Center</option>
+                              <option>Agbowo 1</option>
+                              <option>Agbowo 2</option>
+                              <option>Orogun Center</option>
+                          </select>
+                      </div>
+
+                       <div class="input-field">
+                          <label>Purpose of Visit</label>
+                          <select required name="purpose">
+                              <option disabled selected>Select Marital Status</option>
+                              <option>School</option>
+                              <option>Work</option>
+                              <option>Special Event</option>
+                              <option>Relocate to Ibadan</option>
+                              <option>Conference/Training</option>
+                              
+                          </select>
+                      </div>
+                  </div>
+
+
+                     
+                  </div>
+
+              <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+              </div> 
+          </div>
+
+          <div class="form second">
+              <div class="details address">
+                 
+
+        
+              </div>
+
+              <div class="details family">
+                 
+
+
+ 
+                    
+
+      <div class="fields">
+
+       <!--    <div class="input-field">
+                   <label>Photo</label>
+              <input type="file" multiple="false" accept="images/*" id=finput onchange="upload()">
+          </div> -->
+                   
+                      
+
+
+
+             <!--      <div class="buttons">
+                      <div class="backBtn">
+                          <i class="uil uil-navigator"></i>
+                          <span class="btnText">Back</span>
+                      </div>
+                      
+                      <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                      </button>
+                  </div> -->
+              </div> 
+          </div>
+      </form>
+  </div>
+
+  <script src="multi_form.js"></script>
+                  
+                   
+              
+                    
+     
+
+
+{% endblock %}
